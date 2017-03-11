@@ -39,7 +39,7 @@ object MyModule {
   def fib(n: Int): Int = {
     @annotation.tailrec
     def loop(i: Int, ancestors: List[Int]): Int = {
-      if (ancestors.indices.contains(i)) {a
+      if (ancestors.indices.contains(i)) {
         ancestors.drop(ancestors.indices.end - 1 - i).head
       }
       else {

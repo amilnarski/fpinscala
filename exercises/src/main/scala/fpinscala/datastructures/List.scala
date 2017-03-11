@@ -90,15 +90,15 @@ object List { // `List` companion object. Contains functions for creating and wo
     loop(l, Nil)
   }
 
-  def length[A](l: List[A]): Int = l.foldRight[Int](0)((x: Int, y: Int) => (y + 1))
+  def length[A](l: List[A]): Int = foldRight[A, Int](l, 0)((a: A, y: Int) => y + 1)
 
   def foldLeft[A,B](l: List[A], z: B)(f: (B, A) => B): B = {
-    @annotation.tailrec
+    /*@annotation.tailrec
     if (l.isEmpty)
       z
     else
-      foldLeft(l.dropRight(1), f(l.last, z))
-
+      foldLeft(l.dropRight(1), f(l.last, z))*/
+    z
   }
 
   def map[A,B](l: List[A])(f: A => B): List[B] = sys.error("todo")
